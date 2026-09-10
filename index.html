@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOID-X</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .system {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background:
+        radial-gradient(circle at center, #111 0%, #030303 45%, #000 75%);
+    }
+
+    .top {
+      position: absolute;
+      top: 25px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #777;
+    }
+
+    .core {
+      width: 190px;
+      height: 190px;
+      border: 1px solid #555;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 35px #222;
+      animation: pulse 2s infinite;
+    }
+
+    .core::before,
+    .core::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid #333;
+    }
+
+    .core::before {
+      width: 145px;
+      height: 145px;
+    }
+
+    .core::after {
+      width: 90px;
+      height: 90px;
+      border-color: #777;
+    }
+
+    .core-text {
+      z-index: 2;
+      font-size: 22px;
+      letter-spacing: 5px;
+    }
+
+    .status {
+      margin-top: 35px;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: #888;
+    }
+
+    .scan {
+      margin-top: 12px;
+      width: 240px;
+      height: 2px;
+      background: #333;
+      overflow: hidden;
+    }
+
+    .scan-line {
+      height: 100%;
+      width: 40%;
+      background: #fff;
+      animation: scan 1.5s infinite;
+    }
+
+    .commands {
+      position: absolute;
+      bottom: 35px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 90%;
+    }
+
+    button {
+      background: #080808;
+      color: #aaa;
+      border: 1px solid #333;
+      padding: 12px 18px;
+      border-radius: 6px;
+      letter-spacing: 1px;
+    }
+
+    @keyframes pulse {
+      50% {
+        box-shadow: 0 0 60px #333;
+      }
+    }
+
+    @keyframes scan {
+      0% {
+        transform: translateX(-150%);
+      }
+      100% {
+        transform: translateX(400%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="system">
+
+    <div class="top">
+      <span>VOID-X</span>
+      <span>ONLINE</span>
+    </div>
+
+    <div class="core">
+      <div class="core-text">V-X</div>
+    </div>
+
+    <div class="status">SYSTEM SCANNING</div>
+
+    <div class="scan">
+      <div class="scan-line"></div>
+    </div>
+
+    <div class="commands">
+      <button>VOICE</button>
+      <button>RESEARCH</button>
+      <button>MAP</button>
+      <button>WEATHER</button>
+    </div>
+
+  </div>
+</body>
+</html>
